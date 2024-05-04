@@ -8,7 +8,7 @@ const port = process.env.APP_PORT || 3000;
 const appName = process.env.APP_NAME || "miaw";
 
 const app = express();
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use("/", router);
