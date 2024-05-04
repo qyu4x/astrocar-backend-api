@@ -49,14 +49,7 @@ const login = (req, res) => {
 
     for (const user of dbUsers) {
         if (user.email === email && user.password === password) {
-            res.status(200)
-                .json({
-                    id : user.id,
-                    email: user.email,
-                    password: user.password,
-                    createdAt: Date.now(),
-                    updatedAt: Date.now()
-                })
+            res.render('home', {email});
             return
         }
     }
